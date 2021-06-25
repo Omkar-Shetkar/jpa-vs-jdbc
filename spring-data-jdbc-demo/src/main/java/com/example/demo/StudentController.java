@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+
 @RestController
 @RequestMapping("/api/student")
 public class StudentController {
@@ -28,8 +29,7 @@ public class StudentController {
     }
 
     private Student update(int score) {
-        Student student = studentRepository.findById(1)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Student student = studentRepository.findById(1).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         student.setScore(score);
         Student updated = studentRepository.save(student);
         return updated;

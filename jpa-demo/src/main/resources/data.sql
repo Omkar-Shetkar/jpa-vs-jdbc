@@ -1,0 +1,1 @@
+INSERT INTO student (id, name, score) VALUES (1, 'student-1', 50);
